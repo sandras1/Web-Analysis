@@ -6,7 +6,7 @@ numpy==1.24.4
 psycopg2-binary==2.9.9
 python-dotenv==1.0.0
 pytz==2023.3.post1
-scipy==1.11.3
+scipy
 sqlparse==0.4.4
 typing_extensions==4.8.0
 xgboost==2.0.2

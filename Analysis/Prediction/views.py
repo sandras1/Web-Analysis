@@ -93,6 +93,6 @@ class PredictionAPIView(APIView):
     def make_prediction(self, user_input):
         input_numpy_array = np.asarray(user_input)
         input_reshaped = input_numpy_array.reshape(1, -1)
-        model = pickle.load(open("/home/sandra/Documents/xgb_classifier.pkl", "rb"))
+        model = pickle.load(open("/Users/anupamaravindran/Desktop/Ai-web/xgb_classifier.pkl", "rb"))
         prediction = model.predict(input_reshaped)
         return prediction
