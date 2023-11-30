@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import Modal from "./Modal";
 
+const baseurl = process.env.REACT_APP_API_BASE_URL
 const DataTable = ({ data }) => {
   if (data === null) {
     return <div>No data available</div>;
   }
+  
   const initialFormData = data.reduce((obj, item) => {
     return {
       ...obj,
@@ -36,7 +38,7 @@ const DataTable = ({ data }) => {
     console.log(dataArray,'dataaaa');
 
     axios
-    .post("http://localhost:8000/api/predict/", dataArray, {
+    .post(baseurl+"api/predict/", dataArray, {
       headers: {
         'Content-Type': 'application/json',
       },
