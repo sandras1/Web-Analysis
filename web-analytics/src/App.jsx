@@ -10,7 +10,6 @@ import formlabel from "./Models/FormLabel";
 import ScaterChart from "./Charts/ScatterChart";
 import ScatterPlot from "./Charts/ScatterChart";
 import DoughnutChart from "./Charts/PiChart";
-import Donuts from "./Charts/Donuts";
 // import { useDispatch } from "react-redux";
 // import { userInput } from "./Redux/ActionCreator";
 
@@ -18,34 +17,6 @@ function App() {
   // const dispatch = useDispatch();
 
   const [data, setData] = useState(null);
-
-  // const data = {
-  //   products: {
-  //     administrative: -0.9971,
-  //     product_duration: -0.471,
-  //     informational: -0.745,
-  //     productQuality: Number(Math.random().toFixed(4)),
-  //     customerService: Number(Math.random().toFixed(4)),
-  //     deliverySpeed: Number(Math.random().toFixed(4)),
-  //     priceValue: Number(Math.random().toFixed(4)),
-  //     websiteEaseOfUse: Number(Math.random().toFixed(4)),
-  //     productVariety: Number(Math.random().toFixed(4)),
-  //     paymentOptions: Number(Math.random().toFixed(4)),
-  //     orderTracking: Number(Math.random().toFixed(4)),
-  //     returnPolicy: Number(Math.random().toFixed(4)),
-  //     security: Number(Math.random().toFixed(4)),
-  //     userInterface: Number(Math.random().toFixed(4)),
-  //     productInformation: Number(Math.random().toFixed(4)),
-  //     websiteFeatures: Number(Math.random().toFixed(4)),
-  //     customerReviews: Number(Math.random().toFixed(4)),
-  //     promotions: Number(Math.random().toFixed(4)),
-  //     shippingOptions: Number(Math.random().toFixed(4)),
-  //     websitePerformance: Number(Math.random().toFixed(4)),
-  //     productAvailability: Number(Math.random().toFixed(4)),
-  //     customerCommunication: Number(Math.random().toFixed(4)),
-  //     overallSatisfaction: Number(Math.random().toFixed(4)),
-  //   },
-  // };
 
   useEffect(() => {
     console.log(formlabel, "forms");
@@ -86,10 +57,8 @@ function App() {
   return (
     <>
       {/* <Nav /> */}
-      {/* <ChartOne /> */}
       {/* <DoughnutChart /> */}
       <div className="main">
-        {/* <Donuts /> */}
         <ChartOne />
         <div className="section">
           <ScaterChart />

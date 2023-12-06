@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-const baseurl = process.env.REACT_APP_API_BASE_URL
+// const baseurl = process.env.REACT_APP_API_BASE_URL
+
 const DataTable = ({ data }) => {
   if (data === null) {
     return <div>No data available</div>;
@@ -37,8 +38,12 @@ const DataTable = ({ data }) => {
     };
     console.log(dataArray,'dataaaa');
 
+    //  const baseurl = process.env.REACT_APP_API_BASE_URL;
+    const baseurl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+
+
     axios
-    .post(baseurl+"api/predict/", dataArray, {
+    .post(`${baseurl}api/predict/`, dataArray, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,7 +56,6 @@ const DataTable = ({ data }) => {
       console.error("Error making the request:", error);
     });
     handleShowModal();
-
   };
 
   // const renderFields = () => {
