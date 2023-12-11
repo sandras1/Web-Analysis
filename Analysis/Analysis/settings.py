@@ -75,7 +75,7 @@ ROOT_URLCONF = 'Analysis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'we-analytics-frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -97,6 +97,7 @@ DATABASES = {
         'USER': env("POSTGRES_USER"),
         'PASSWORD': env("POSTGRES_PASSWORD"),
         'HOST': os.getenv('DB_HOST', 'localhost'),
+        # 'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -136,7 +137,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -149,7 +149,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
     'http://localhost:3000',
     'http://localhost:5173',
-    'http://localhost',
-    'http://0.0.0.0'
+    # 'http://localhost',
+    # 'http://0.0.0.0'
 
 ]

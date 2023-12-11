@@ -8,9 +8,6 @@ services:
     restart: unless-stopped
     env_file: ./Analysis/Analysis/.env
     command: python3 Analysis/manage.py runserver 0.0.0.0:8000
-#    command: bash -c "python check_db.py --service-name db --ip db --port 5432 &&
-#      python3 Analysis/manage.py migrate &&
-#      python3 Analysis/manage.py 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
