@@ -65,4 +65,4 @@ class PredictionResult(models.Model):
     Output = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return f"Prediction Result {self.id}"
