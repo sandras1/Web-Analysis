@@ -58,20 +58,6 @@ const DataTable = ({ data }) => {
     handleShowModal();
   };
 
-  // const renderFields = () => {
-  //   return data.map((key, index) => (
-  //     <div key={key} className="form-group">
-  //       <label htmlFor={key}>{key}</label>
-  //       <input
-  //         type="text"
-  //         id={index}
-  //         name={key}
-  //         value={formData.key}
-  //         onChange={handleInputChange}
-  //       />
-  //     </div>
-  //   ));
-  // };
   const renderFields = () => {
     return (
       <div className="form-group-container">
@@ -79,7 +65,8 @@ const DataTable = ({ data }) => {
           <div key={key} className="form-group">
             <label htmlFor={key}>{key}</label>
             <input
-              type="text"
+              type="number"
+              required
               id={index}
               name={key}
               value={formData.key}
@@ -123,3 +110,25 @@ const handleCloseModal = () => setShowModal(false);
 };
 
 export default DataTable;
+
+
+
+
+
+
+
+
+  // const renderFields = () => {
+  //   return data.map((key, index) => (
+  //     <div key={key} className="form-group">
+  //       <label htmlFor={key}>{key}</label>
+  //       <input
+  //         type="text"
+  //         id={index}
+  //         name={key}
+  //         value={formData.key}
+  //         onChange={handleInputChange}
+  //       />
+  //     </div>
+  //   ));
+  // };

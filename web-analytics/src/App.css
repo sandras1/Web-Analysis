@@ -129,6 +129,13 @@ input {
   color: #100c0c;
   background-color: rgb(157, 216, 245);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
 
 button {
   color: #f8f4f4;
