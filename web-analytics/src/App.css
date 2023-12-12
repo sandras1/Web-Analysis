@@ -107,19 +107,16 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
-
 .form-group {
   flex: 0 0 calc(25% - 10px);
   margin-bottom: 10px;
 }
-
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
   color: #100c0c;
 }
-
 input {
   width: 100%;
   padding: 8px;
