@@ -14,7 +14,7 @@ class PredictionAPIView(APIView):
         print(user_input)
 
         if len(user_input) != 60:
-            return Response({'error': 'Invalid input length'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Invalid input length.'}, status=status.HTTP_400_BAD_REQUEST)
 
         prediction = self.make_prediction(user_input)
         result = 'This customer will end-up buying things.\n(class = True/1 Revenue).' if prediction == 1 \
