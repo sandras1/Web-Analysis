@@ -125,6 +125,8 @@ input {
   border-radius: 4px;
   color: #100c0c;
   background-color: rgb(157, 216, 245);
+  pointer-events: auto;
+  user-select: auto;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button,

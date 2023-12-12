@@ -54,7 +54,7 @@ const DataTable = ({ data }) => {
     const baseurl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
     // const baseurl = import.meta.env.VITE_REACT_APP_API_BASE_URL || 'http://localhost:8000/';
 
-    console.log(import.meta.env, "meta");
+    // console.log(import.meta.env, "meta");
     console.log(baseurl, "baseurl");
 
     axios
@@ -127,6 +127,10 @@ const DataTable = ({ data }) => {
 };
 
 export default DataTable;
+
+
+
+
 
 // const renderFields = () => {
 //   return data.map((key, index) => (
