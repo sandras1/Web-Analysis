@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Modal from "./Modal";
+import '../App.css'
 
 const DataTable = ({ data }) => {
   if (data === null) {
@@ -19,16 +20,40 @@ const DataTable = ({ data }) => {
   const [dataOutput, setDataOutput] = useState();
   const [errorMessages, setErrorMessages] = useState({});
 
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   // console.log(typeof(Number(value)),'value');
+
+  //   //new changes validation
+  //   const inputValue = value.trim();
+  //   if (/^[-+]?\d*\.?\d+$/.test(inputValue)) {
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       [name]: Number(value),
+  //     }));
+  //     setErrorMessages((prevErrors) => ({
+  //       ...prevErrors,
+  //       [name]: "",
+  //     }));
+  //   } else {
+  //     setErrorMessages((prevErrors) => ({
+  //       ...prevErrors,
+  //       [name]: "Please enter a valid number.",
+  //     }));
+  //   }
+  // };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // console.log(typeof(Number(value)),'value');
-
-    //new changes validation
+  
+    // New changes validation
     const inputValue = value.trim();
-    if (/^[-+]?\d*\.?\d+$/.test(inputValue)) {
+  
+    // Allow negative numbers and decimal points
+    if (/^[-]?\d*\.?\d*$/.test(inputValue)) {
       setFormData((prevData) => ({
         ...prevData,
-        [name]: Number(value),
+        [name]: inputValue,  // Store the input value as a string
       }));
       setErrorMessages((prevErrors) => ({
         ...prevErrors,
@@ -41,13 +66,14 @@ const DataTable = ({ data }) => {
       }));
     }
   };
+  
   // console.log(formData,'formdata');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const temp = Object.values(formData);
     const dataArray = {
-      user_input: temp,
+      user_input: temp.map(value => Number(value)),
     };
     console.log(dataArray, "dataaaa");
 
@@ -65,13 +91,13 @@ const DataTable = ({ data }) => {
       })
       .then((response) => {
         setDataOutput(response.data.prediction_data.Output);
-
+        handleShowModal();
         console.log("responsee", response);
       })
       .catch((error) => {
         console.error("Error making the request:", error);
       });
-    handleShowModal();
+   
   };
 
   const renderFields = () => {
@@ -127,22 +153,3 @@ const DataTable = ({ data }) => {
 };
 
 export default DataTable;
-
-
-
-
-
-// const renderFields = () => {
-//   return data.map((key, index) => (
-//     <div key={key} className="form-group">
-//       <label htmlFor={key}>{key}</label>
-//       <input
-//         type="text"
-//         id={index}
-//         name={key}
-//         value={formData.key}
-//         onChange={handleInputChange}
-//       />
-//     </div>
-//   ));
-// };

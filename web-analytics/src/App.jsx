@@ -19,7 +19,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log(formlabel, "forms");
+    // console.log(formlabel, "forms");
     setData(formlabel);
     const userInputData = JSON.stringify({
       user_input: [
@@ -30,7 +30,7 @@ function App() {
         1,
       ],
     });
-    console.log(userInputData, "userinput");
+    // console.log(userInputData, "userinput");
     //     dispatch(
     //       userInput(userInputData, (res) => {
     //         if(res.status === 200){
