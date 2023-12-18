@@ -33,4 +33,4 @@ services:
       - ./web-analytics:/app/web-analytics
     ports:
       - "5173:5173"
-#    command: ["--host", "0.0.0.0"]
+
