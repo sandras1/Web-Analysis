@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Modal from "./Modal";
 import '../App.css'
+import '../App.css'
 
 const DataTable = ({ data }) => {
   if (data === null) {
@@ -45,10 +46,10 @@ const DataTable = ({ data }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-  
+
     // New changes validation
     const inputValue = value.trim();
-  
+
     // Allow negative numbers and decimal points
     if (/^[-]?\d*\.?\d*$/.test(inputValue)) {
       setFormData((prevData) => ({
@@ -66,7 +67,7 @@ const DataTable = ({ data }) => {
       }));
     }
   };
-  
+
   // console.log(formData,'formdata');
 
   const handleSubmit = (e) => {
@@ -97,7 +98,7 @@ const DataTable = ({ data }) => {
       .catch((error) => {
         console.error("Error making the request:", error);
       });
-   
+
   };
 
   const renderFields = () => {
