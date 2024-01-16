@@ -60,7 +60,7 @@ const options = {
 const ScaterChart = () => {
   return (
     <div className="Scatter">
-      <h2 style={{color:'black'}}>Session comparison</h2>
+      <h1 style={{color:'black',fontSize:'29px'}}>Session comparison</h1>
       <Scatter className='ScatterChart' data={data} options={options} />
     </div>
   );

@@ -10,6 +10,7 @@ import formlabel from "./Models/FormLabel";
 import ScaterChart from "./Charts/ScatterChart";
 import ScatterPlot from "./Charts/ScatterChart";
 import DoughnutChart from "./Charts/PiChart";
+import Tile from "./Charts/Tile";
 // import { useDispatch } from "react-redux";
 // import { userInput } from "./Redux/ActionCreator";
 
@@ -56,8 +57,10 @@ function App() {
 
   return (
     <>
-      {/* <Nav /> */}
-      {/* <DoughnutChart /> */}
+    {/* <div className="tile-main"> */}
+
+     {/* <Tile/> */}
+    {/* </div> */}
       <div className="main">
         <ChartOne />
         <div className="section">

@@ -59,7 +59,7 @@ export const data = {
 export default function BarChart() {
   return (
     <div>
-      <h2 style={{ color: "black" }}>Page comparison</h2>
+      <h1 style={{ color: "black" }}>Page comparison</h1>
       <Bar
         className="BarChart"
         options={options}
